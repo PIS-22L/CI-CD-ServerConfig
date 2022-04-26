@@ -1,0 +1,15 @@
+[Unit]
+Description=smee service to redirect GitHub webhook to jenkins 
+
+Wants=network.target
+After=syslog.target network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/smee --url http://smee.io/NtCxY22LeMpBYWn --path /github-webhook/ --port 8080
+Restart=on-failure
+RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
