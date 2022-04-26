@@ -8,12 +8,14 @@ In order to achieve that, <a href="https://github.com/probot/smee.io">smee</a> h
 
 ## How to run smee_client on server
 
-Download <a href="https://github.com/probot/smee-client">smee_client</a>. You can try it running before proceeding. 
+Download <a href="https://github.com/probot/smee-client">smee_client</a>. You can try it running before proceeding.
 
-Unfortunately smee client does not work as a backend service. For the convinience (no necessity to keep ssh terminal with smee client running) it is recommended to create systemctl service to run in background:
+Open smee.service and configure following arguments:
+- url: URL of your smee webhook (the same you use in Jenkins or whatever service)
+- port: port used by the service webhook is meant for
+<img src="./images/screenshot.jpeg">
 
-- download or clone this repository
-- inside downloaded directory run
+Unfortunately smee client does not work as a backend service. For the convinience (no necessity to keep ssh terminal with smee client running) it is recommended to create systemctl service to run in background. Download and run:
     
 - `sudo chmod +x set_smee_service.sh`
 
@@ -21,15 +23,11 @@ Unfortunately smee client does not work as a backend service. For the convinienc
 
 <br>
 
-### Stopping service:
+### Stopping and disabling service
 
-- `sudo systemctl stop smee`
+- `sudo chmod +x remove_smee_service.sh`
 
-<br>
-
-### Disabling service:
-
-- `sudo systemctl disable smee`
+- `sudo ./remove_smee_service.sh`
 
 <br>
 
