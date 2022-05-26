@@ -6,7 +6,7 @@ After=syslog.target network-online.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/smee --url http://smee.io/NtCxY22LeMpBYWn --path /github-webhook/ --port 8080
+ExecStart=/usr/local/bin/smee --url http://smee.io/80CiqpXDnIQ1eKN --path /github-webhook/ --port 8080
 Restart=on-failure
 RestartSec=10
 KillMode=process
